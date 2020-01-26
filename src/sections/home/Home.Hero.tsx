@@ -35,7 +35,15 @@ function HomeHero() {
                       We’re a team with senior startup experience here to help
                       your business take the next step.
                     </MainText>
-                    <ButtonArrow onClick={toggleContact} text="Get in touch" />
+                    <Contact onClick={toggleContact}>
+                      Press <Key>C</Key> anywhere to contact us.
+                    </Contact>
+                    <Mobile>
+                      <ButtonArrow
+                        onClick={toggleContact}
+                        text="Get in touch"
+                      />
+                    </Mobile>
                   </Transitions.CSS.FadeIn>
                 </TextContainer>
                 <ShapeShifter />
@@ -109,4 +117,42 @@ const ContentContainer = styled.div`
   @media screen and (max-height: 648px) {
     top: -60px;
   }
+`
+
+const Contact = styled.button`
+  color: ${p => p.theme.colors.grey};
+  font-weight: 600;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: #fff;
+
+    span {
+      background: #fff;
+    }
+  }
+
+  ${media.desktop`
+    display: none;
+  `};
+`
+
+const Key = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px;
+  color: #000;
+  background: ${p => p.theme.colors.grey};
+  font-size: 13px;
+  width: 16px;
+  height: 16px;
+  border-radius: 2.5px;
+  transition: background 0.25s ease;
+`
+
+const Mobile = styled.div`
+  ${media.desktop_medium_up`
+    display: none;
+  `};
 `
