@@ -40,6 +40,7 @@ function HomeHero() {
                     </Contact>
                     <Mobile>
                       <ButtonArrow
+                        as="button"
                         onClick={toggleContact}
                         text="Get in touch"
                       />

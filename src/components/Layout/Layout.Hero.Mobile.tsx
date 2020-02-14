@@ -58,7 +58,6 @@ const Frame = styled.div<{ background?: string }>`
     top: 90px;
     position: fixed;
     z-index: 0;
-    pointer-events: none;
     background: transparent;
 
     @media screen and (max-height: 600px) {
